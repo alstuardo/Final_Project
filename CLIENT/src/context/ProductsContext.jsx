@@ -32,7 +32,7 @@ const ProductsContextProvider = ({ children }) => {
 
   useEffect(() => {
     getProducts()
-  }, [])
+  }, [products.length])
 
   useEffect(() => {
     getFavorites(userId)

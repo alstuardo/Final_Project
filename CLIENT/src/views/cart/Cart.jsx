@@ -6,6 +6,7 @@ import { UserContext } from '../../context/UserContext'
 import { ProductsContext } from '../../context/ProductsContext'
 import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const Cart = () => {
   const { cart, total, getTotal, fnCart } = useContext(CartContext)
@@ -18,24 +19,39 @@ const Cart = () => {
     getTotal()
   }, [cart])
 
-  useEffect(() => {
-    const token = window.sessionStorage.getItem('token')
-    if (token) {
-      fnIsAuthenticated(true)
-      getUserData()
-    } else {
-      navigate('/register')
-    }
-  }, [isAuthenticated])
+  // useEffect(() => {
+  //   const token = window.sessionStorage.getItem('token')
+  //   if (token) {
+  //     fnIsAuthenticated(true)
+  //     getUserData()
+  //   } else {
+  //     navigate('/register')
+  //   }
+  // }, [isAuthenticated])
 
   useEffect(() => {
     const newCart = cart.filter((item) => products.some((product) => product.id === item.id))
     fnCart(newCart)
   }, [])
 
+  const toRegister = () => {
+    Swal.fire({
+      title: 'Para ver seguir con la compra debes iniciar sesión o registrarte',
+      showCancelButton: true,
+      confirmButtonColor: '#756AB6',
+      cancelButtonColor: '#E0AED0',
+      confirmButtonText: 'Registrate',
+      cancelButtonText: 'Quedarme aquí'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate('/register')
+      }
+    })
+  }
+
   return (
-    <Container fluid className='px-5 py-5'>
-      <Container className='w-75 px-4 pb-5 cart-container'>
+    <Container fluid className='py-5'>
+      <Container className='w-75 pb-5 cart-container'>
         <h2 className='mt-4 mb-3 text-center title-name'>Mi Carrito</h2>
         {cart.length > 0
           ? <Row className='justify-content-center gy-3'>
@@ -49,7 +65,7 @@ const Cart = () => {
               <p className='text-end fs-3'>${total.toLocaleString('es-CL')}</p>
             </Col>
             <Col xs={12} className='text-center'>
-              <Button variant='primary' size='lg' onClick={() => navigate('/payment')}>Proceder con la compra</Button>
+              <Button variant='primary' size='lg' onClick={() => isAuthenticated ? navigate('/payment') : toRegister()}>Proceder con la compra</Button>
             </Col>
           </Row>
           : <Container>

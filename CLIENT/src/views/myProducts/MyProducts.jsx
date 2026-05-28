@@ -107,7 +107,7 @@ const MyProducts = () => {
   return (
     <>
       <Container className='twosection'>
-        <Row className='trio'>
+        <Row className='justify-content-center'>
           <Col md={5} id='products'>
             <Container className='product'>
               <Card.Title id='my-products'>Mis Productos</Card.Title>
@@ -132,13 +132,13 @@ const MyProducts = () => {
               <div className='horizontal'> </div>
             </Container>
           </Col>
-          <Col md={1} id='separator'>
+          {/* <Col md={1} id='separator'>
             <div className='vertical'> </div>
-          </Col>
+          </Col> */}
           <Col md={5} id='post'>
             <Card className='new-product'>
               <Card.Title id='publish-now'>Publica un producto</Card.Title>
-              <Row className='formRow1'>
+              <Row>
                 <Form.Group as={Col} md='6'/* controlId='validationCustom01' */>
                   <Form.Label>Nombre del Producto</Form.Label>
                   <Form.Control
@@ -161,7 +161,7 @@ const MyProducts = () => {
                   </Form.Select>
                 </Form.Group>
               </Row>
-              <Row className='formRow2'>
+              <Row>
                 <Form.Group as={Col} md='12' controlId='validationCustom01'>
                   <Form.Label>URL de la imagen</Form.Label>
                   <Form.Control
@@ -173,7 +173,7 @@ const MyProducts = () => {
                   />
                 </Form.Group>
               </Row>
-              <Row className='formRow3'>
+              <Row>
                 <Form.Group as={Col} md='6' controlId='validationCustom01'>
                   <Form.Label>Precio</Form.Label>
                   <Form.Control
@@ -195,7 +195,7 @@ const MyProducts = () => {
                   />
                 </Form.Group>
               </Row>
-              <Row className='formRow4'>
+              <Row>
                 <Form.Group as={Col} md='12' controlId='validationCustom01'>
                   <Form.Label>Descripción</Form.Label>
                   <Form.Control
@@ -212,7 +212,11 @@ const MyProducts = () => {
                   />
                 </Form.Group>
               </Row>
-              <Button className='publishBtn' onClick={handleCreate}>Publicar Producto</Button>
+              <Row md={12}>
+                <Form.Group>
+                  <Button className='w-100' onClick={handleCreate}>Publicar Producto</Button>
+                </Form.Group>
+              </Row>
             </Card>
           </Col>
         </Row>

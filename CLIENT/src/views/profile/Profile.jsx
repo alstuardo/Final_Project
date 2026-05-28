@@ -24,10 +24,10 @@ const Profile = () => {
   return (
     <Container className='py-5'>
       <Row className='justify-content-around'>
-        <Col xs={3} className='profile-menu-section'>
+        <Col md={3} className='profile-menu-section'>
           <ProfileMenu />
         </Col>
-        <Col xs={9} className='profile-form-section'>
+        <Col md={8} className='profile-form-section'>
           <ProfileForm activeUser={activeUser} getUserData={getUserData} />
         </Col>
       </Row>

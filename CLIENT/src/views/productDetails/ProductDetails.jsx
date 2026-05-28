@@ -71,42 +71,55 @@ const ProductDetails = () => {
   }, [])
 
   const { title, description, stock, price, image_url: imageUrl } = product
-  const handleCart = (product) => {
-    if (userId) {
-      addToCart(product)
-      navigate('/cart')
-    } else {
-      addToCart(product)
-      toRegister()
-    }
+  // se comenta esta función para permitir agregar al carrito sin estar autenticado
+  // const handleCart = (product) => {
+  //   if (userId) {
+  //     addToCart(product)
+  //     navigate('/cart')
+  //   } else {
+  //     addToCart(product)
+  //     toRegister()
+  //   }
+  // }
+
+  const handleNavigate = () => {
+    navigate('/cart')
+    // Se comenta esta parte para permitir agregar al carrito sin estar autenticado
+    // if (userId) {
+    //   navigate('/cart')
+    // } else {
+    //   toRegister()
+    // }
   }
 
   return (
     <Container className='pdcontainer'>
       <Card className='principal-box'>
         <Card.Body className='wholespace'>
-          <div id='big-photo'>
-            <img src={imageUrl} className='big-img' alt='Imagen grande' />
-          </div>
-          <div className='details'>
-            <section className='icons'>
-              <LikeButton userId={userId} productId={productId} />
-              <div className='action' onClick={() => { handleCart(product) }}>{add}
-              </div>
-            </section>
-            <Card.Title className='title-name'>{title}</Card.Title>
-            <StarRating totalStars={5} productId={productId} />
-            <Card.Text className='description'>{description}</Card.Text>
-            <Row className='count'>
-              <Col>
-                <Card.Text className='stock'>Stock:{stock} Unidades</Card.Text>
-              </Col>
-              <Col>
-                <Card.Text className='price'>${price.toLocaleString('es-CL')}</Card.Text>
-              </Col>
-            </Row>
-            <Button id='addCart' type='button' onClick={() => addToCart(product)}>Agregar al carrito</Button>
-          </div>
+          <Row className='justify-content-center'>
+            <Col md={6} id='big-photo'>
+              <img src={imageUrl} className='big-img' alt='Imagen grande' />
+            </Col>
+            <Col md={6} className='details'>
+              <section className='icons'>
+                <LikeButton userId={userId} productId={productId} />
+                <div className='action' onClick={() => { addToCart(product); handleNavigate() }}>{add}
+                </div>
+              </section>
+              <Card.Title className='title-name'>{title}</Card.Title>
+              <StarRating totalStars={5} productId={productId} />
+              <Card.Text className='description'>{description}</Card.Text>
+              <Row className='count'>
+                <Col md={7}>
+                  <Card.Text className='stock'>Stock:{stock} Unidades</Card.Text>
+                </Col>
+                <Col md={5}>
+                  <Card.Text className='price text-end'>${price.toLocaleString('es-CL')}</Card.Text>
+                </Col>
+              </Row>
+              <Button className='m-auto' id='addCart' type='button' onClick={() => addToCart(product)}>Agregar al carrito</Button>
+            </Col>
+          </Row>
         </Card.Body>
       </Card>
     </Container>

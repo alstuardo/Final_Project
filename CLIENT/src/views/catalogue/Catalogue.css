@@ -1,14 +1,13 @@
 /* gallery */
 .gallery {
+  /* margin: 0;
+  padding: 0;
     grid-area: b;
     display: grid;
-    gap: 10px;
-    position: relative;
+    gap: 5px;
+    position: relative; */
   }
   
-  .grid-columns-5 {
-    grid-template-columns: repeat(3, 1fr);
-  }
   
   .gallery .productCard {
     padding: 10px 10px 0px 10px;
@@ -42,9 +41,9 @@
     align-self: flex-end;
   }
   
-  .p-3 {
+  /* .p-3 {
     padding: 30px;
-  }
+  } */
 
   aside{
     grid-area: a;
@@ -56,9 +55,10 @@
     margin-left: 10px;
   }
 
-  aside h3 {
-    margin: 0 0 20px 50px;
+ .h3 {
+    /* margin: 0 0 20px 50px; */
     padding-top: 10px;
+    color: #FFE5E5;
   }
 
   aside p {
@@ -85,7 +85,7 @@
     justify-content: end;
   }
 
-  .grid-container {
+  /* .grid-container {
     display: grid;
     grid-template-areas:
       "c c"
@@ -95,7 +95,7 @@
     grid-template-columns: 0.2fr 0.8fr;
     gap: 1px;
     color: #FFE5E5;
-  }
+  } */
 
   .likeBtn {
     width: 74.2px;
@@ -107,4 +107,5 @@
 
   .cardCatalogue {
     position: relative;
+    padding: 0;
   }

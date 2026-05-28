@@ -60,3 +60,12 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@media (max-width: 768px) {
+  .container-home {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 10px;
+  }
+}

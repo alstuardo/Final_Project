@@ -59,7 +59,7 @@ const Login = () => {
 
   return (
     <div className='principal-login'>
-      <Card className='login-card'>
+      <Card className='login-card container-xs'>
         <Card.Title className='title-name'>Iniciar Sesión</Card.Title>
         <Form>
           <Form.Group className='mb-3' controlId='formBasicEmail'>

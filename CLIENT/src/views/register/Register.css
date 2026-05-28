@@ -4,12 +4,12 @@
     align-items: center;
     margin-top: 30px;
     margin-bottom: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .register-card {
        background-color: #E0AED0;
-       width: 31rem;
-       height: 40rem;
        margin: 20px 0 20px 0;
        padding: 20px;
        border: 3px solid #4230a9;
@@ -25,6 +25,7 @@
 
 .form-label {
     font-weight: bold;
+    margin-bottom: 6px;
 }
 
 .btn-primary {

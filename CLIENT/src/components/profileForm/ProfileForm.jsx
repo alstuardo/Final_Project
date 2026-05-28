@@ -120,31 +120,31 @@ const ProfileForm = ({ activeUser, getUserData }) => {
       <Container fluid className='text-center gap-5'>
         <Form>
           <Row className='mb-3'>
-            <Col>
+            <Col md={6}>
               <Form.Label>Nombre</Form.Label>
               <Form.Control name='firstName' placeholder={activeUser.firstName} onChange={handleChange} />
             </Col>
-            <Col>
+            <Col md={6}>
               <Form.Label>Apellido</Form.Label>
               <Form.Control name='lastName' placeholder={activeUser.lastName} onChange={handleChange} />
             </Col>
           </Row>
           <Row className='mb-3'>
-            <Col>
+            <Col md={6}>
               <Form.Label>Teléfono</Form.Label>
               <Form.Control name='phoneNumber' placeholder={activeUser.phoneNumber} onChange={handleChange} />
             </Col>
-            <Col>
+            <Col md={6}>
               <Form.Label>Dirección</Form.Label>
               <Form.Control name='address' placeholder={activeUser.address} onChange={handleChange} />
             </Col>
           </Row>
           <Row className='mb-3'>
-            <Col>
+            <Col md={6}>
               <Form.Label>Email</Form.Label>
               <Form.Control name='email' placeholder={activeUser.email} disabled />
             </Col>
-            <Col>
+            <Col md={6}>
               <Form.Label>Contraseña</Form.Label>
               <Form.Control name='password' placeholder='********' type='password' onChange={handleChange} />
             </Col>
@@ -158,7 +158,7 @@ const ProfileForm = ({ activeUser, getUserData }) => {
           </Row>
           <Row className='mb-3'>
             <Col>
-              <Button className='w-25' variant='primary' type='submit' onClick={handleDeleteUser}>
+              <Button className='w-75' variant='primary' type='submit' onClick={handleDeleteUser}>
                 Eliminar cuenta
               </Button>
             </Col>

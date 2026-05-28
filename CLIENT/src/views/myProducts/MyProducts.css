@@ -5,25 +5,25 @@
 }
 .twosection {
    /*  background-color: rgb(52, 135, 135); */
-    width: 100%;
-    height: 47rem;
+    /* width: 100%; */
+    /* height: 47rem; */
     margin-top: 2rem;
 }
 
-.trio {
+/* .trio {
     margin: 0;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: nowrap;
-}
+} */
 
 #products {
-    width: 30rem;
-    height: 40rem;
+    /* width: 90%; */
+    height: 45rem;
     overflow-y:scroll;
     box-sizing: border-box;
-    margin: 2rem 0 0 0;
+    margin: 2rem 0 2rem 0;
     display: flex;
     padding: 0;
     background-color: #E0AED0;
@@ -33,20 +33,20 @@
     color: #4230a9;
 }
 
-#separator {
+/* #separator {
     width: min-content;
-}
+} */
 
-.product {
+/* .product {
     height: 43rem;
-}
+} */
 
 #product {
     background-color: rgb(255, 255, 255);
-    width: 27rem;
-    height: 18rem;
-    margin: 1rem;
-    padding: 0 5px 0 5px;
+    /* width: 27rem; */
+    /* height: 18rem; */
+    margin-bottom: 1rem;
+    /* padding: 0 5px 0 5px; */
 }
 
 .productDark {
@@ -65,7 +65,8 @@
 
 #my-products {
     font-size: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 #interaction {
@@ -94,23 +95,23 @@
     width: 5rem;
 }
 
-.vertical {
+/* .vertical {
     border-right: 2px solid #AC87C5;
     height: 47rem;
-}
+} */
 
 #post {
-    width: 30rem;
+    margin: 0;
 }
 
 .new-product {
+    height: 45rem;
     background-color: #E0AED0;
-    margin: 2rem 0 20px 0;
+    margin: 2rem 0 2rem 0;
     padding: 20px;
     gap: 40px;
     border: 3px solid #4230a9;
     box-shadow: 1px 5px 15px #1e0e3e;
-    height: 40rem;
 }
 
 .new-product :last-child {
@@ -123,14 +124,10 @@
     margin-bottom: 0;
 }
 
-.publishBtn {
-    margin-top: 110px;
-}
-
 .description {
     min-height: 3rem;
     max-height: 8rem;
-    min-width: 25.5rem;
+    min-width: 100%;
 }
 
 .formRow1 {
