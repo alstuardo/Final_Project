@@ -1,41 +1,9 @@
+.carousel-item img {
+width: 100%;
+height: 400px; 
+overflow: hidden; 
+}
+
 h3 {
-    margin: 0;
-}
-
-.caption {
-    background-color: rgba(0, 0, 0, 0.4);
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
-.header-carousel .carousel,
-.header-carousel .carousel-item {
-  height: 50vh;            /* móvil/tablet */
-  min-height: 260px;
-}
-
-@media (min-width: 768px) {
-  .header-carousel .carousel,
-  .header-carousel .carousel-item {
-    height: 60vh;          /* tablets/mediano */
-  }
-}
-
-@media (min-width: 1200px) {
-  .header-carousel .carousel,
-  .header-carousel .carousel-item {
-    height: 60vh;          /* desktop grande */
-    max-height: 720px;     /* evita que se haga gigantesco */
-  }
-}
-
-/* La magia: que la imagen llene sin deformar */
-.slide-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;        /* recorta, no estira */
-  object-position: center;  /* centra el foco */
-  cursor: pointer;
+    text-shadow: 1px 4px 8px crimson;
 }
